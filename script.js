@@ -91,9 +91,3 @@ contactForm.addEventListener("submit", function(event) {
     // Clear the form
     contactForm.reset();
 });
-
-    thankYou.textContent = "Thank you! Your message has been received.";
-
-    // Clear the form
-    contactForm.reset();
-});
