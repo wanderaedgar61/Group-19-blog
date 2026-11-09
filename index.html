@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 19 - IST2106</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <h2>Group 19</h2>
+        <button id="menuBtn" aria-label="Open navigation menu">☰</button>
+        <nav id="navLinks">
+            <a href="#about">About Us</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ABOUT US -->
+    <section id="about">
+        <h1>About Us</h1>
+        <!-- Group description -->
+        <p>
+            We are Group 19, a team of university students taking IST2108.
+            We work together to develop creative solutions to problems
+            affecting students and the community.
+        </p>
+
+        <h2>Our Members</h2>
+        <div class="members">
+        
+            <div class="card"><h3>WANDERA EDGAR BRIAN</h3><p>25/U/04140/EVE</p></div>
+            <div class="card"><h3>SSENGENDO IAN </h3><p>25/U/04106/PS </p></div>
+            <div class="card"><h3>YANGI HAKIM LADO </h3><p>25/E/04147/PS </p></div>
+            <div class="card"><h3>DUMO EMMANUEL JACKSON </h3><p>25/U/03734/PS </p></div>
+            <div class="card"><h3>ECHENGU FREDRICK </h3><p>25/U/17585/EVE </p></div>
+            <div class="card"><h3>ODONG EGARU MARKHIM </h3><p>25/U/04057/EVE</p></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h1>Our Projects so far</h1>
+        <div class="projects">
+            <div class="card">
+                <h3>Connect Better</h3>
+                <p>
+                    <!-- Project description -->
+                    A project focused on finding solutions to poor Wi-Fi connectivity on campus to improve students' access to reliable internet.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Past Papers Problem</h3>
+                <p>
+                    <!-- Project description -->
+                    A project addressing the challenges students face when accessing past examination papers for revision and academic preparation.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Environmental Protection</h3>
+                <p>
+                    <!-- Project description -->
+                    A website that provides deatailed information on how the environment is being destroyed, using images and a video. Then how to save it
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <!-- Contact message -->
+        <p>
+            Have a question or want to know more about our projects?
+            Get in touch with Group 19 using the form below.
+        </p>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="thankYou" aria-live="polite"></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Group 19 – IST2106 | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

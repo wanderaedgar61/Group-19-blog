@@ -1,0 +1,154 @@
+/* GENERAL PAGE DESIGN */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8fc;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #123b63;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE MENU BUTTON */
+#menuBtn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* PAGE SECTIONS */
+section {
+    padding: 45px 8%;
+}
+
+section h1 {
+    color: #123b63;
+}
+
+/* MEMBER AND PROJECT GRIDS */
+.members,
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* CARDS */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    color: #123b63;
+    margin-top: 0;
+}
+
+/* CONTACT FORM */
+form {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #123b63;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #205b91;
+}
+
+/* FOOTER */
+footer {
+    background-color: #123b63;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE DESIGN FOR PHONES */
+@media (max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    #menuBtn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        margin: 8px 0;
+    }
+
+    .members,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 30px 6%;
+    }
+}
