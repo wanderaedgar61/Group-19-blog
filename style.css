@@ -1,3 +1,43 @@
+/* THEME COLOURS
+   Each theme is just a set of colours. The page uses these names,
+   so changing the theme changes everything at once. */
+
+/* Light theme (the default) */
+:root {
+    --bg: #f4f8fc;
+    --text: #222222;
+    --header: #123b63;
+    --heading: #123b63;
+    --card: #ffffff;
+    --button: #123b63;
+    --button-hover: #205b91;
+    --border: #cccccc;
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+    --bg: #10161d;
+    --text: #e6edf3;
+    --header: #0a1a2b;
+    --heading: #7fb4e6;
+    --card: #18212b;
+    --button: #2d6aa3;
+    --button-hover: #3f82bf;
+    --border: #33404d;
+}
+
+/* Green theme */
+body[data-theme="green"] {
+    --bg: #eef5ee;
+    --text: #1c2a20;
+    --header: #1f5a34;
+    --heading: #1f5a34;
+    --card: #ffffff;
+    --button: #1f5a34;
+    --button-hover: #2f7a49;
+    --border: #c5d4c7;
+}
+
 /* GENERAL PAGE DESIGN */
 * {
     box-sizing: border-box;
@@ -6,14 +46,14 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f8fc;
-    color: #222;
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
 /* HEADER */
 header {
-    background-color: #123b63;
+    background-color: var(--header);
     color: white;
     padding: 18px 8%;
     display: flex;
@@ -35,6 +75,22 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* THEME BUTTONS */
+.themes button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.themes button.active {
+    background: white;
+    color: #123b63;
+}
+
 /* MOBILE MENU BUTTON */
 #menuBtn {
     display: none;
@@ -50,8 +106,9 @@ section {
     padding: 45px 8%;
 }
 
-section h1 {
-    color: #123b63;
+section h1,
+section h2 {
+    color: var(--heading);
 }
 
 /* MEMBER AND PROJECT GRIDS */
@@ -65,15 +122,46 @@ section h1 {
 
 /* CARDS */
 .card {
-    background-color: white;
+    background-color: var(--card);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
-    color: #123b63;
+    color: var(--heading);
     margin-top: 0;
+}
+
+/* SESSION INFORMATION */
+.info-btn {
+    margin-top: 25px;
+    background-color: transparent;
+    color: var(--heading);
+    border: 2px solid var(--heading);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.info-btn:hover {
+    background-color: var(--heading);
+    color: var(--bg);
+}
+
+.info {
+    margin-top: 15px;
+    padding: 5px 20px;
+    background-color: var(--card);
+    border-left: 4px solid var(--heading);
+    border-radius: 5px;
+    max-width: 500px;
+}
+
+/* The hidden attribute must always hide the panel */
+.info[hidden] {
+    display: none;
 }
 
 /* CONTACT FORM */
@@ -87,9 +175,11 @@ textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     border-radius: 5px;
     font-size: 15px;
+    background-color: var(--card);
+    color: var(--text);
 }
 
 textarea {
@@ -98,7 +188,7 @@ textarea {
 }
 
 form button {
-    background-color: #123b63;
+    background-color: var(--button);
     color: white;
     padding: 12px 25px;
     border: none;
@@ -107,12 +197,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #205b91;
+    background-color: var(--button-hover);
 }
 
 /* FOOTER */
 footer {
-    background-color: #123b63;
+    background-color: var(--header);
     color: white;
     text-align: center;
     padding: 15px;
@@ -122,6 +212,7 @@ footer {
 @media (max-width: 700px) {
     header {
         flex-wrap: wrap;
+        gap: 10px;
     }
 
     #menuBtn {
@@ -132,7 +223,7 @@ footer {
         display: none;
         width: 100%;
         flex-direction: column;
-        margin-top: 15px;
+        margin-top: 5px;
     }
 
     nav.show {
@@ -147,6 +238,20 @@ footer {
     .projects {
         grid-template-columns: 1fr;
     }
+
+    section {
+        padding: 30px 6%;
+    }
+}
+
+/* TABLETS: two cards per row */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .members,
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
     section {
         padding: 30px 6%;
