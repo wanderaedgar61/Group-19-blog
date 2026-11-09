@@ -251,9 +251,3 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
-    section {
-        padding: 30px 6%;
-    }
-}
